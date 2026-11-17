@@ -480,7 +480,7 @@ nav ul a.active {
 }
 
 
-@media (min-width: 769px) and (max-width: 1150px) {
+@media (min-width: 1001px) and (max-width: 1300px) {
   nav ul {
     gap: 1rem;
   }
@@ -492,9 +492,53 @@ nav ul a.active {
 
 
 /* ============================================================
+   SHOUT OUTS PAGE
+   ============================================================ */
+.shout-section:nth-of-type(even) {
+  background: var(--off-black);
+}
+
+.shout-section {
+  border-bottom: 1px solid var(--green);
+}
+
+.shout-intro {
+  min-height: 17rem;
+  padding-bottom: 2rem;
+}
+
+.shout-intro .movement-header {
+  margin-bottom: 1.5rem;
+}
+
+.shout-title {
+  color: var(--green-mid);
+}
+
+
+.band-divider--shoutouts-footer {
+  background-image: url('Section 3/section3_full_divider.jpeg');
+  background-position: center 48%;
+  height: 240px;
+}
+
+/* Caption at the top, copyright stays at the bottom */
+.band-divider--footer .divider-body,
+.band-divider--shoutouts-footer .divider-body {
+  justify-content: space-between;
+  padding-top: 16px;
+}
+
+.band-divider--footer .footer-copy,
+.band-divider--shoutouts-footer .footer-copy {
+  margin-top: 0;
+}
+
+
+/* ============================================================
    RESPONSIVE — MOBILE
    ============================================================ */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
 
   /* Show hamburger, hide desktop nav */
   .hamburger {
@@ -539,19 +583,20 @@ nav ul a.active {
   nav ul a:last-child {
     border-bottom: none;
   }
+}
 
+@media (max-width: 768px) {
   .movement {
     padding: 3rem 1rem 2.5rem;
   }
-
-
 }
 
 @media (max-width: 480px) {
   .band-divider {
     height: 150px;
   }
-  .band-divider--footer {
+  .band-divider--footer,
+  .band-divider--shoutouts-footer {
     height: 190px;
   }
 
