@@ -388,9 +388,9 @@ nav ul a.active {
   background-image: url('Section 2/section2_full_divider.jpeg');
   background-position: center 58%;
 }
-.band-divider--together {
-  background-image: url('Section 3/section3_full_divider.jpeg');
-  background-position: center 48%;
+.band-divider--finale {
+  background-image: url('Section 3/Finale_pic.png');
+  background-position: center 66%;
 }
 .band-divider--footer {
   background-image: url('Section 4/bottom_full_footer.jpeg');
