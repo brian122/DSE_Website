@@ -329,6 +329,10 @@ nav ul a.active {
   margin-bottom: 2.5rem;
 }
 
+.video-wrapper + .intro-text {
+  margin-top: 3rem;
+}
+
 .section-rule {
   max-width: 680px;
   margin: 0 auto 3rem;
