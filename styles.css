@@ -522,6 +522,62 @@ nav ul a.active {
   height: 240px;
 }
 
+/* Testimonial cards */
+.shout-card {
+  max-width: 680px;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  border-left: 3px solid var(--green);
+}
+
+.shout-rule {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.shout-name {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  color: var(--white);
+}
+
+.shout-role {
+  margin-bottom: 1rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--green-mid);
+}
+
+.shout-quote {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.shout-quote + .shout-quote,
+.shout-quote + .shout-list,
+.shout-list + .shout-quote {
+  margin-top: 1.1rem;
+}
+
+.shout-list {
+  margin-top: 0.6rem;
+  padding-left: 1.25rem;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.shout-list li + li {
+  margin-top: 0.5rem;
+}
+
+.shout-list li::marker {
+  color: var(--green-mid);
+}
+
 /* Caption at the top, copyright stays at the bottom */
 .band-divider--footer .divider-body,
 .band-divider--shoutouts-footer .divider-body {
