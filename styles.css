@@ -366,6 +366,42 @@ nav ul a.active {
 
 
 /* ============================================================
+   TABLEAU CV DASHBOARD
+   ============================================================ */
+.cv-intro {
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.viz-wrapper {
+  /* Break out of the 860px content column so the 1000px dashboard fits */
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1006px, calc(100vw - 2rem));  /* 1000px dashboard + 3px border each side */
+  height: 806px;                           /* 800px dashboard + borders */
+  margin: 0;
+  background: #111;
+  border: 3px solid var(--green);
+  box-shadow: 0 0 40px rgba(17, 88, 23, 0.35);
+  overflow: hidden;
+}
+
+.viz-wrapper tableau-viz {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.viz-wrapper.viz-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray);
+  font-style: italic;
+}
+
+/* ============================================================
    BAND DIVIDER
    ============================================================ */
 .band-divider {
@@ -656,8 +692,13 @@ nav ul a.active {
     height: 190px;
   }
 
-  .video-wrapper {
+  .video-wrapper,
+  .viz-wrapper {
     border-width: 2px;
+  }
+
+  .viz-wrapper {
+    height: 804px;
   }
 
   .hero-image {
