@@ -278,6 +278,10 @@ nav ul a.active {
   box-shadow: 0 0 40px rgba(17, 88, 23, 0.35);
 }
 
+.story-figure {
+  margin-top: 0.5rem;
+}
+
 .photo-credit {
   margin-top: 0.6rem;
   font-size: 0.72rem;
