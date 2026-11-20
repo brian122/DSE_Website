@@ -328,6 +328,11 @@ nav ul a.active {
 }
 
 
+.intro-text .gold-line {
+  font-weight: 700;
+  color: #E0B317;
+}
+
 .story-text {
   text-align: left;
   margin-bottom: 2.5rem;
@@ -410,6 +415,59 @@ nav ul a.active {
   color: var(--gray);
   font-style: italic;
 }
+
+/* ============================================================
+   CONFERENCE SESSION GRID
+   ============================================================ */
+.session-grid {
+  list-style: none;
+  max-width: var(--content-w);
+  margin: 3rem auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.session-card {
+  display: block;
+  height: 100%;
+  text-decoration: none;
+  color: var(--white);
+  background: var(--off-black);
+  border: 2px solid var(--green);
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.session-card img {
+  width: 100%;
+  aspect-ratio: 5 / 4;
+  object-fit: contain;
+  background: #111;
+}
+
+.session-name {
+  display: block;
+  padding: 0.7rem 0.5rem;
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.session-card:hover,
+.session-card:focus-visible {
+  border-color: var(--green-mid);
+  box-shadow: 0 0 24px rgba(17, 88, 23, 0.55);
+  transform: translateY(-3px);
+  outline: none;
+}
+
+.session-card:hover .session-name,
+.session-card:focus-visible .session-name {
+  color: var(--green-mid);
+}
+
 
 /* ============================================================
    BAND DIVIDER
@@ -688,12 +746,20 @@ nav ul a.active {
 }
 
 @media (max-width: 768px) {
+  .session-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .movement {
     padding: 3rem 1rem 2.5rem;
   }
 }
 
 @media (max-width: 480px) {
+  .session-grid {
+    grid-template-columns: 1fr;
+  }
+
   .band-divider {
     height: 150px;
   }
