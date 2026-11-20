@@ -333,7 +333,8 @@ nav ul a.active {
   margin-bottom: 2.5rem;
 }
 
-.video-wrapper + .intro-text {
+.video-wrapper + .intro-text,
+.viz-wrapper + .intro-text {
   margin-top: 3rem;
 }
 
@@ -389,6 +390,11 @@ nav ul a.active {
   border: 3px solid var(--green);
   box-shadow: 0 0 40px rgba(17, 88, 23, 0.35);
   overflow: hidden;
+}
+
+/* Taller box for the Org62 Data App (higher specificity so it also wins on phones) */
+.viz-wrapper.viz-wrapper--tall {
+  height: 1100px;
 }
 
 .viz-wrapper tableau-viz {
