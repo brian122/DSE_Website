@@ -56,38 +56,48 @@ if (sections.length && navLinks.length) {
   sections.forEach(s => observer.observe(s));
 }
 
-/* ---- Tableau CV dashboard (Connected App, Direct Trust) ---- */
-const cvViz = document.getElementById('cv-viz');
+/* ---- Tableau dashboards (Connected App, Direct Trust) ---- */
+const vizWrappers = document.querySelectorAll('.viz-wrapper[data-src]');
 
-if (cvViz) {
-  const loadViz = async () => {
+if (vizWrappers.length) {
+  const loadViz = async wrapper => {
     try {
       const res = await fetch('/api/tableau-token', { cache: 'no-store' });
       if (!res.ok) throw new Error(`token request failed (${res.status})`);
       const { token } = await res.json();
 
+      // Debug: print the JWT and its decoded claims (local development only)
+      if (['localhost', '127.0.0.1'].includes(location.hostname)) {
+        const [header, payload] = token.split('.').slice(0, 2)
+          .map(part => JSON.parse(atob(part.replace(/-/g, '+').replace(/_/g, '/'))));
+        console.log('Tableau JWT:', token);
+        console.log('Tableau JWT header:', header, 'claims:', payload);
+      }
+
       const viz = document.createElement('tableau-viz');
-      viz.setAttribute('src', cvViz.dataset.src);
+      viz.setAttribute('src', wrapper.dataset.src);
       viz.setAttribute('token', token);
       viz.setAttribute('toolbar', 'hidden');
       viz.setAttribute('hide-tabs', '');
       viz.setAttribute('width', '100%');
       viz.setAttribute('height', '100%');
-      cvViz.appendChild(viz);
+      wrapper.appendChild(viz);
     } catch (err) {
-      cvViz.classList.add('viz-error');
-      cvViz.textContent = 'The CV dashboard is unavailable right now.';
+      wrapper.classList.add('viz-error');
+      wrapper.textContent = 'This dashboard is unavailable right now.';
       console.error(err);
     }
   };
 
-  // Lazy-load: only request a token once the dashboard is near the viewport
+  // Lazy-load: only request a token once a dashboard is near the viewport
   const vizObserver = new IntersectionObserver(entries => {
-    if (entries.some(e => e.isIntersecting)) {
-      vizObserver.disconnect();
-      loadViz();
-    }
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        vizObserver.unobserve(entry.target);
+        loadViz(entry.target);
+      }
+    });
   }, { rootMargin: '300px 0px' });
 
-  vizObserver.observe(cvViz);
+  vizWrappers.forEach(w => vizObserver.observe(w));
 }

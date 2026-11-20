@@ -28,7 +28,7 @@ app.get('/api/tableau-token', (_req, res) => {
       sub: TABLEAU_USER,
       aud: 'tableau',
       jti: crypto.randomUUID(),
-      scp: ['tableau:views:embed']
+      scp: ['tableau:views:embed', 'tableau:packages:read', 'tableau:users:read']
     },
     TABLEAU_SECRET_VALUE,
     {
