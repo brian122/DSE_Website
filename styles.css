@@ -333,6 +333,15 @@ nav ul a.active {
   color: #E0B317;
 }
 
+.intro-text .section-rule + .intro-lead {
+  margin-top: 0;
+}
+
+.intro-text .section-rule.intro-rule {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
 .story-text {
   text-align: left;
   margin-bottom: 2.5rem;
