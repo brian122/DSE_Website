@@ -703,6 +703,28 @@ nav ul a.active {
   margin-top: 0;
 }
 
+/* Enlarge the footer caption; center it on the main page, keep it at the top on Shout Outs */
+.band-divider--footer .divider-label,
+.band-divider--shoutouts-footer .divider-label {
+  gap: 18px;
+}
+
+.band-divider--footer .divider-label {
+  margin: auto 0;
+}
+
+.band-divider--footer .divider-word,
+.band-divider--shoutouts-footer .divider-word {
+  font-size: clamp(16px, 4.5vw, 28px);
+  letter-spacing: clamp(3px, 1.2vw, 9px);
+}
+
+.band-divider--footer .divider-rule,
+.band-divider--shoutouts-footer .divider-rule {
+  width: clamp(20px, 8vw, 80px);
+  height: 2px;
+}
+
 
 /* ============================================================
    RESPONSIVE — MOBILE
