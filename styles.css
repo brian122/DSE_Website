@@ -411,6 +411,11 @@ nav ul a.active {
   height: 1100px;
 }
 
+/* Wider box for the Movement I CV dashboard */
+.viz-wrapper#cv-viz {
+  width: min(1250px, calc(100vw - 2rem));
+}
+
 .viz-wrapper tableau-viz {
   display: block;
   width: 100%;
